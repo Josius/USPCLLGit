@@ -1,0 +1,8 @@
+CONFIGURAÇÃO INICIAL
+
+git config --global user.name [seu nome]
+git config --global user.email[seu email]
+
+git config --global user.name -> devolve o nome de usuário, agora se completar o parâmetro [seu nome], vc cadastrará o nome de usuário
+git config --global user.email -> devolve o email, agora se completar o parâmetro [seu email], vc cadastrará o email do usuário
+
