@@ -1,8 +1,47 @@
 CONFIGURAÇÃO INICIAL
 
-git config --global user.name [seu nome]
-git config --global user.email[seu email]
+	git config --global user.name [seu nome]
+	git config --global user.email[seu email]
 
-git config --global user.name -> devolve o nome de usuário, agora se completar o parâmetro [seu nome], vc cadastrará o nome de usuário
-git config --global user.email -> devolve o email, agora se completar o parâmetro [seu email], vc cadastrará o email do usuário
+	git config --global user.name -> devolve o nome de usuário, agora se completar o parâmetro [seu nome], vc cadastrará o nome de usuário, mas precisa estar entre aspas
+	git config --global user.email -> devolve o email, agora se completar o parâmetro [seu email], vc cadastrará o email do usuário, mas precisa estar entre aspas
 
+Podemos também fazer uma configuração específica para um projeto, por exemplo, estamos trabalhando e usando o usuário/email da empresa, mas queremos usar um outro usuário/email para outro projeto. Simplesmente abrimos o git na pasta desse outro projeto e fazemos o mesmo acima, porem sem o argumento '--global'. Pois o global vai alterar para todos os projetos, e sem ele podemos fazer uma configuração específica. Se não houver uma configuração específica, ele usará a cadastrada em global.
+
+Verifica:
+	git config user.name 
+	git config user.email
+Cadastra:
+	git config user.name [seu nome]
+	git config user.email[seu email]	
+
+
+INICIANDO UM REPOSITÓRIO
+
+2 Formas:
+	git init						-> inicia um repositório na pasta em que vc está, desconectado de tudo, um repositório offline
+	git clone [link do repositório]	-> inicia um repositório online, pode ser github ou gitlab, etc.
+	.git 		[NÃO MEXER]			-> pasta criada com 'git init' que armazena o histórico/configuração de todas as alterações feitas por vc e/ou outros usuários, além de permitir o git reconhecer que naquela pasta tem um projeto git
+
+
+COMANDOS PARA TRABALHAR NO REPOSITÓRIO
+
+	git status 	-> Mostra a situação atual do repositório (NOTA DE CURIOSIDADE: se houver uma pasta vazia no diretório atual, essa pasta não aparece no 'git status')
+	git add		-> Adiciona os arquivos desejados para a Staging Area
+		Parâmetros (obrigatórios)
+			arquivo/pasta(s) - no caso é o nome do arquivo/pasta, pode ser um ou mais arquivos/pastas
+		Parâmetros (opcional)
+			-u - adiciona todos os arquivos que têm modificações e que já estavam no repositório antes de começar as modificações
+		Como selecionar vários arquivos?
+			Coringas/Wildcards - Servem para criar um padrão de nome p/ os arquivos e adicionar eles todos de uma vez:
+				'git add .' -> este wildcard é o mais comum, adiciona tudo, seja qlqr arquivo e/ou qlqr pasta e o que houver dentro da pasta também
+				'git add <nome do arquivo>*' -> se houver mais de um arquivo com nomes semelhantes (arq1.txt, arq2.txt, arq3.txt, etc..), se usarmos esse wildcard com '*' no final (git add arq*), ele vai add todos os arquivos que começam com aquele nome especifícado antes do '*', e o que vêm depois não importa, somente o que for semelhante ao que estiver antes do '*'. 
+				Também podemos usar o '*' no começo, como 'git add *.txt', que ele iria adicionar todos os arquivos '.txt'
+	git commit	-> Salva os arquivos da Staging Area para o Repositório
+		Parâmetros (obrigatórios)
+			mensagem de commit -> neste caso, se digitar 'git commit' sem mais nada, entraremos em outra área, a qual vc precisará escrever uma mensagem sobre o commit feito, uma explicação simples para as alterações
+		Parâmetros (opcionais)
+			-m (mensagem) -> entre aspas duplas escreve-se a mensagem depois do argumento '-m'
+			-a -> detecta tudo que estiver alterado da pasta atual e envia direto para o repositório sem passar pela Staging Area (MUITO ÚTIL PARA ECONOMIZAR TEMPO)
+			--amend -> se já executado um commit e esqueceu de adicionar algum arquivo, coloca o arquivo esquecido na Staging Area e ao invés de dar um outro 'git commit -m "mensagem"' e ter dois commits no histórico, simplesmente usamos '--amend' que irá add no commit anterior o arquivo esquecido
+			--no-edit (USAR COM --amend) -> se usar somente o '--amend', o git pedirá uma nova mensagem e irá sobrescrever o commit anterior; usando '--amend' com '--no-edit', não será sobrescrito o commit anterior e usará a mesma mensagem

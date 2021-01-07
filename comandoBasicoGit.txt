@@ -1,0 +1,52 @@
+COMANDO BÁSICO GIT
+
+Estrutura de um comando
+	comando [argumentos]
+	[argumentos] alteram ou especificam um comando; podem ser obrigatórios ou não
+	
+Exemplo de argumento
+	comando argumento
+	comando -a -> -a é uma flag e o comando pode possuir mais de uma, as quais podem ser combinadas [ex.: ls -la que é o mesmo que ls -l + ls -a]
+	comando --argumento - >se o argumento tiver mais de uma letra, é preciso usar dois hífens para diferenciar das flags, do contrário, entenderá como combinação de flags
+
+COMANDOS
+	
+	pwd (print working directory) -> verifica qual o caminho do diretório/pasta atual
+
+	ls (list) -> lista os arquivos e diretórios do diretório atual
+		Parâmetros (opcionais)
+			ls outra-pasta -> lista os diretórios de outra pasta a partir da pasta atual
+			-l -> devolve no formato de lista com mais informações
+			-a -> além das informações do comando ls, devolve também arquivos/pastas ocultos
+			Também é possível combinar as flags, como ls -la
+
+	cd (change directory) -> altera o diretório no qual estamos trabalhando
+		Parâmetros (obrigatórios)
+			Se der cd sem uma pasta ou caminho de uma pasta, o comando levará até a pasta raiz do sistema (Linux->/home, Windows->c/Users/nomeDoUsuário)
+			Pasta de destino -> pode ir para a pasta subsequente ou seguir para outras pastas subsequentes, neste caso, precisa saber o caminho de destino
+			.. -> volta um diretório/pasta anterior.
+
+	mkdir/rmdir (make/remove directory) -> altera o diretório no qual estamos trabalhando
+		Parâmetros (obrigatórios)
+			nome do diretório -> make cria, remove apaga, mas somente se o diretório/pasta estiver vazio
+			
+	touch/rm (touch/remove) -> cria e deleta arquivos 
+	NOTA 1: só existe na linha de comando do bash e Linux, Windows não tem
+	NOTA 2: se der um touch com mesmo nome de um arquivo que já existe, ele sobrescreverá com um arquivo vazio
+	NOTA 3: pode fazer touch arquivo1 arquivo2 arquivon ... que resultará na qtde de arquivos nomeados
+		Parâmetros (obrigatórios)
+			nome do arquivo
+		rm
+			-i -> te dá uma confirmação se quer apagar ou não o arquivo, INDICADO PRA SEMPRE USAR (y-confirma, n-nega)
+			-r (muito cuidado) -> é a remoção recursiva. Serve para remover a pasta e todos os arquivos dentro dela, inclusive outras pastas com outros arquivos dentro da pasta raiz
+			
+	mv (move) -> move/renomeia arquivos
+	NOTA 1: pode ser usado para renomear arquivos especificando o novo nome, só precisa colocar o novo nome no campo do destino do parâmetro
+		Parâmetros (obrigatórios)
+			nome do arquivo
+			destino -> local ao qual o arquivo ficará após o comando mv, também pode pegar arquivo de outra pasta e trazer para a pasta atual, basta colocar 1º o endereço do arquivo com o nome do arquivo no parâmetro nome do arquivo e no destino colocar o nome do arquivo
+			Exemplos:
+				$ mv arq2 outra-pasta -> movendo da 'pasta' atual para a 'outra-pasta'
+				$ mv arq3 arq3-alt.txt -> alterando nome do arquivo
+				$ mv outra-pasta/arq2 arq2 -> trazendo arquivo de 'outra-pasta' para 'pasta' atual
+			
