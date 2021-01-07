@@ -1,0 +1,7 @@
+modificação para verificar o 'git add -u'
+
+não funcionou. 
+
+não entendi pq.
+
+Alteração teste
