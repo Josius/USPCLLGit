@@ -1,0 +1,3 @@
+rogerdudler.github.io/git-guide/index.pt_BR.html - Guia prático de Git
+educative.io/blog/bash-shell-command-cheat-sheet - Mais comandos da CLI do Linux
+digitalcitizen.life/command-prompt-how-use-basic-commands - Comandos básicos do CMD do Windows
