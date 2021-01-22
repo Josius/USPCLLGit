@@ -28,7 +28,7 @@ COMANDOS
 
 	mkdir/rmdir (make/remove directory) -> altera o diretório no qual estamos trabalhando
 		Parâmetros (obrigatórios)
-			nome do diretório -> make cria, remove apaga, mas somente se o diretório/pasta estiver vazio
+			nome do diretório -> mkdir cria, rmdir apaga, MAS SOMENTE se o diretório/pasta estiver vazio
 			
 	touch/rm (touch/remove) -> cria e deleta arquivos 
 	NOTA 1: só existe na linha de comando do bash e Linux, Windows não tem

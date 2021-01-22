@@ -9,11 +9,14 @@ CONFIGURAÇÃO INICIAL
 Podemos também fazer uma configuração específica para um projeto, por exemplo, estamos trabalhando e usando o usuário/email da empresa, mas queremos usar um outro usuário/email para outro projeto. Simplesmente abrimos o git na pasta desse outro projeto e fazemos o mesmo acima, porem sem o argumento '--global'. Pois o global vai alterar para todos os projetos, e sem ele podemos fazer uma configuração específica. Se não houver uma configuração específica, ele usará a cadastrada em global.
 
 Verifica:
-	git config user.name 
-	git config user.email
+	git config --global user.name -> no caso, o usuário padrão
+	git config --global user.email-> no caso, o e-mail padrão
+	git config user.name 		  -> no caso, o usuário cadastrado no diretório ao qual o terminal se encontra, se ñ houver específico, retorna global
+	git config user.email		  -> no caso, o e-mail cadastrado no diretório ao qual o terminal se encontra, se ñ houver específico, retorna global
+	
 Cadastra:
-	git config user.name [seu nome]
-	git config user.email[seu email]	
+	git config user.name [seu nome] -> cadastra em um diretório, especificando o usuário para aquele diretório
+	git config user.email[seu email]-> cadastra em um diretório, especificando o e-mail para aquele diretório
 
 
 INICIANDO UM REPOSITÓRIO
