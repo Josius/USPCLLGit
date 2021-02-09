@@ -2,36 +2,40 @@ FERRAMENTAS ÚTEIS I
 
 VERIFICANDO O HISTÓRICO
 
+NOTA: quando entrar no log/show do git, para sair, só apertar a letra 'q'
+
 	git log -> detalha os commits em ordem cronológica
 		Parâmetros (opcionais)
 			--stat 				-> além da informações padrão, também exibe informações a respeito dos arquivos
 			--oneline			-> resume as informações exibidas, imprime somente os 7 1ºs números do cód identificador mais a mensagem obrigatória
 			-N (N =# commits)	-> visualiza somente a qtde N de commits; por exemplo, -3 apresenta somente os 3 últimos commits
-			<pasta/arquivo>
+			<pasta/arquivo>		-> podemos usar o nome/caminho de uma pasta para saber o log somente desse local
 
-Um dos resultados do git log:
+	$ git log:
 ................................................................................
-commit 3af26a637e938f5970afb038587468f284f31c66 (HEAD -> main, origin/main, origin/HEAD) -> código identificador único de cada commit
+commit 3af26a637e938f5970afb038587468f284f31c66 (HEAD -> main, origin/main, origin/HEAD) -> código identificador único de cada commit (Nome do commit)
 Author: Josius <josius.amaro@gmail.com> 												 -> quem fez o commit
 Date:   Fri Jan 22 10:30:05 2021 -0300													 -> quando o commit foi efetuado
 
     pqnas alterações																	 -> mensagem obrigatória do git commit -m "<mensagem>"
 ................................................................................			
 
-Um dos resultados do git log --stat:
+
+	$ git log --stat:
 ................................................................................
 commit 3af26a637e938f5970afb038587468f284f31c66 (HEAD -> main, origin/main, origin/HEAD)
 Author: Josius <josius.amaro@gmail.com>
 Date:   Fri Jan 22 10:30:05 2021 -0300
 
     pqnas alterações
-																						 -> abaixo vemos as informações a respeito dos arquivos
- Aula2/comandoBasicoGit.txt    |  2 +-
- Aula2/configuracaoInicial.txt | 11 +++++++----
+																						abaixo vemos as informações a respeito dos arquivos
+ Aula2/comandoBasicoGit.txt    |  2 +-												 	 -> qtde de alterações (subtrações e adições)
+ Aula2/configuracaoInicial.txt | 11 +++++++----											 -> qtde de alterações (subtrações e adições)
  2 files changed, 8 insertions(+), 5 deletions(-)
 ................................................................................
 
-Um resultado do git log --oneline:
+
+	$ git log --oneline:
 ................................................................................
 3af26a6 (HEAD -> main, origin/main, origin/HEAD) pqnas alterações
 6352078 aula2Completa
@@ -44,3 +48,40 @@ cee2267 aula2 32:00
 c1f0ca5 Initial commit
 ................................................................................
 
+
+	$ git log Aula3
+................................................................................
+commit 17b32ee64d86d8102323ee49216d86cb6d5d0c4f (HEAD -> main, origin/main, origin/HEAD)
+Author: Josius <josius.amaro@gmail.com>
+Date:   Tue Feb 9 11:43:27 2021 -0300
+
+    aula 3, em 05:20, explicando sobre o parâmetro <pasta/arquivo>
+................................................................................
+
+	
+
+	
+	git show -> mostra quais alterações foram feitas no último commit efetuado
+		Parâmetros (opcionais)
+			<commit SHA>		-> Mostra quais alterações foram feitas em um determinado commit pelo seu SHA (cód identificador)
+			
+			
+			
+	
+REVERTENDO ALTERAÇÕES
+	
+Qualquer alteração que estiver no histórico pode ser desfeita inteira ou parcialmente.
+Entretanto, quando publicamos as alterações no servidor remoto, já não podemos mais revertê-las. Isso funciona como um método de segurança, ao qual enviamos o arquivo ao servidor remoto e outra pessoa altera ele. Se desfizermos as alterações no servidor remoto, as alterações efetuadas por outra pessoa serão perdidas. Há um comando para alterar, porém ele é muito específico e de pouco uso. É melhor prestar atenção ao que é publicado no servidor do que tentar alterar seu conteúdo.
+
+	git reset -> retorna o HEAD ao estado especificado
+		Parâmetros (opcionais)
+			<commit SHA>		-> CUIDADO!!!
+			--soft
+			
+			
+			
+
+
+			
+SOBRE O HEAD
+http://marklodato.github.io/visual-git-guide/index-en.html			
