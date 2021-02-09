@@ -1,4 +1,4 @@
-CONFIGURAÇÃO INICIAL
+CONFIGURAÇÃO INICIAL - 30:00 min do vídeo Aula2
 
 	git config --global user.name [seu nome]
 	git config --global user.email[seu email]
