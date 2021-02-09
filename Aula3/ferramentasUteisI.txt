@@ -1,0 +1,46 @@
+FERRAMENTAS ÚTEIS I
+
+VERIFICANDO O HISTÓRICO
+
+	git log -> detalha os commits em ordem cronológica
+		Parâmetros (opcionais)
+			--stat 				-> além da informações padrão, também exibe informações a respeito dos arquivos
+			--oneline			-> resume as informações exibidas, imprime somente os 7 1ºs números do cód identificador mais a mensagem obrigatória
+			-N (N =# commits)	-> visualiza somente a qtde N de commits; por exemplo, -3 apresenta somente os 3 últimos commits
+			<pasta/arquivo>
+
+Um dos resultados do git log:
+................................................................................
+commit 3af26a637e938f5970afb038587468f284f31c66 (HEAD -> main, origin/main, origin/HEAD) -> código identificador único de cada commit
+Author: Josius <josius.amaro@gmail.com> 												 -> quem fez o commit
+Date:   Fri Jan 22 10:30:05 2021 -0300													 -> quando o commit foi efetuado
+
+    pqnas alterações																	 -> mensagem obrigatória do git commit -m "<mensagem>"
+................................................................................			
+
+Um dos resultados do git log --stat:
+................................................................................
+commit 3af26a637e938f5970afb038587468f284f31c66 (HEAD -> main, origin/main, origin/HEAD)
+Author: Josius <josius.amaro@gmail.com>
+Date:   Fri Jan 22 10:30:05 2021 -0300
+
+    pqnas alterações
+																						 -> abaixo vemos as informações a respeito dos arquivos
+ Aula2/comandoBasicoGit.txt    |  2 +-
+ Aula2/configuracaoInicial.txt | 11 +++++++----
+ 2 files changed, 8 insertions(+), 5 deletions(-)
+................................................................................
+
+Um resultado do git log --oneline:
+................................................................................
+3af26a6 (HEAD -> main, origin/main, origin/HEAD) pqnas alterações
+6352078 aula2Completa
+ffdf7ba links sobre cmd e terminal
+9824924 aula2
+cee2267 aula2 32:00
+557d2e2 aula2 30:40
+3fdadc5 22:30 aula2
+261b060 Update README.md
+c1f0ca5 Initial commit
+................................................................................
+
