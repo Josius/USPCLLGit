@@ -1,6 +1,6 @@
 FERRAMENTAS ÚTEIS I
 
-VERIFICANDO O HISTÓRICO
+	VERIFICANDO O HISTÓRICO
 
 NOTA: quando entrar no log/show do git, para sair, só apertar a letra 'q'
 
@@ -103,4 +103,20 @@ Semelhante ao git reset, se já houver acontecido o commit, git restore não det
 				'git add <nome do arquivo>*' -> se houver mais de um arquivo com nomes semelhantes (arq1.txt, arq2.txt, arq3.txt, etc..), se usarmos esse wildcard com '*' no final (git add arq*), ele vai add todos os arquivos que começam com aquele nome especifícado antes do '*', e o que vêm depois não importa, somente o que for semelhante ao que estiver antes do '*'. 
 				Também podemos usar o '*' no começo, como 'git add *.txt', que ele iria adicionar todos os arquivos '.txt'
 
-				
+
+
+
+	MANIPULANDO ARQUIVOS
+	Sempre que estivermos em um repositório git é preferível utilizar os comandos do git, pois eles trabalham melhor no git. Por exemplo, temos um arquivo em um diretório git e movemos ele para outro diretório git usando o comando 'mv'. Pode ocorrer do git entender que movemos o arquivo ou que apagamos o arquivo e criamos um outro semelhante no outro diretório. Neste caso, o histórico do arquivo pode ser perdido, o que vem a ser péssimo. Logo, com o comando 'git mv' o histórico não é perdido.
+	
+	COMPARAÇÃO
+	mv -> git mv
+	ls -> git ls-files
+	rm -> git rm
+	
+	
+	
+	
+	IGNORANDO ARQUIVOS
+	.gitignore -> arquivo de texto que contém uma lista de nomes que serão ignorados pelo git. Geralmente (mas não necessariamente) localizado na raiz do projeto; também podemos colocar um por pasta, o qual ignorará os arquivos de cada pasta ao qual ele se encontra. Podemos usar coringas para definir os nomes.
+	
