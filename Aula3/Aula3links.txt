@@ -1,3 +1,5 @@
-http://comandosgit.github.io/
-http://researchhubs.com/post/computing/git/what-is-HEAD-in-git.html
-https://www.thegeekstuff.com/2014/04/git-log/
+comandosgit.github.io/ - Guia de comandos do git em português
+researchhubs.com/post/computing/git/what-is-HEAD-in-git.html - O que é o HEAD no git
+www.thegeekstuff.com/2014/04/git-log/ - Formas de usar o git log
+
+
