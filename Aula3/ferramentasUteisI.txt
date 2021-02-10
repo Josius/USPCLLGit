@@ -73,15 +73,35 @@ REVERTENDO ALTERAÇÕES
 Qualquer alteração que estiver no histórico pode ser desfeita inteira ou parcialmente.
 Entretanto, quando publicamos as alterações no servidor remoto, já não podemos mais revertê-las. Isso funciona como um método de segurança, ao qual enviamos o arquivo ao servidor remoto e outra pessoa altera ele. Se desfizermos as alterações no servidor remoto, as alterações efetuadas por outra pessoa serão perdidas. Há um comando para alterar, porém ele é muito específico e de pouco uso. É melhor prestar atenção ao que é publicado no servidor do que tentar alterar seu conteúdo.
 
-	git reset -> retorna o HEAD ao estado especificado
+
+
+
+
+VERIFICAR SOBRE O HEAD E O git reset EM OUTRA FONTE
+
+	git reset -> retorna o HEAD ao estado especificado - Pelo que entendi, se um arquivo estiver na staging area, com git reset, esse arquivo retorna para o working directory, entretanto, se houve alguma alteração no arquivo antes de enviá-lo para a staging area, essa alteração não é apagada; o arquivo simplesmente retorna da staging area para a working	area com as alterações efetuadas anteriormente.
 		Parâmetros (opcionais)
-			<commit SHA>		-> CUIDADO!!!
-			--soft
-			
-			
-			
+			<commit SHA>		-> CUIDADO!!! -> VERIFICAR EM OUTRA FONTE!!!
+			--soft				-> VERIFICAR EM OUTRA FONTE!!!
 
-
-			
 SOBRE O HEAD
 http://marklodato.github.io/visual-git-guide/index-en.html			
+
+
+
+
+
+Semelhante ao git reset, se já houver acontecido o commit, git restore não detectará nenhuma alteração
+
+	git restore -> restaura os arquivos ao seu estado original
+		Parâmetros (obrigatórios)
+			arquivo/pasta(s) - no caso é o nome do arquivo/pasta, pode ser um ou mais arquivos/pastas
+		Parâmetros (opcionais)
+			--staged			-> 
+			
+		Coringas/Wildcards - Servem para criar um padrão de nome p/ os arquivos e adicionar eles todos de uma vez:
+				'git add .' -> este wildcard é o mais comum, adiciona tudo, seja qlqr arquivo e/ou qlqr pasta e o que houver dentro da pasta também
+				'git add <nome do arquivo>*' -> se houver mais de um arquivo com nomes semelhantes (arq1.txt, arq2.txt, arq3.txt, etc..), se usarmos esse wildcard com '*' no final (git add arq*), ele vai add todos os arquivos que começam com aquele nome especifícado antes do '*', e o que vêm depois não importa, somente o que for semelhante ao que estiver antes do '*'. 
+				Também podemos usar o '*' no começo, como 'git add *.txt', que ele iria adicionar todos os arquivos '.txt'
+
+				
