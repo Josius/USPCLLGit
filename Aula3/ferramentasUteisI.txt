@@ -76,8 +76,7 @@ Entretanto, quando publicamos as alterações no servidor remoto, já não podem
 
 
 
-
-VERIFICAR SOBRE O HEAD E O git reset EM OUTRA FONTE
+NOTA: Não entendi muito bem sobre o git reset/restore e o HEAD, preciso verificar outra fonte para entender
 
 	git reset -> retorna o HEAD ao estado especificado - Pelo que entendi, se um arquivo estiver na staging area, com git reset, esse arquivo retorna para o working directory, entretanto, se houve alguma alteração no arquivo antes de enviá-lo para a staging area, essa alteração não é apagada; o arquivo simplesmente retorna da staging area para a working	area com as alterações efetuadas anteriormente.
 		Parâmetros (opcionais)
