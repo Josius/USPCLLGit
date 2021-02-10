@@ -23,18 +23,22 @@ INICIANDO UM REPOSITÓRIO
 
 2 Formas:
 	git init						-> inicia um repositório na pasta em que vc está, desconectado de tudo, um repositório offline
+	
 	git clone [link do repositório]	-> inicia um repositório online, pode ser github ou gitlab, etc.
+	
 	.git 		[NÃO MEXER]			-> pasta criada com 'git init' que armazena o histórico/configuração de todas as alterações feitas por vc e/ou outros usuários, além de permitir o git reconhecer que naquela pasta tem um projeto git
 
 
 COMANDOS PARA TRABALHAR NO REPOSITÓRIO
 
 	git status 	-> Mostra a situação atual do repositório (NOTA DE CURIOSIDADE: se houver uma pasta vazia no diretório atual, essa pasta não aparece no 'git status')
+	
 	git add		-> Adiciona os arquivos desejados para a Staging Area
 		Parâmetros (obrigatórios)
 			arquivo/pasta(s) - no caso é o nome do arquivo/pasta, pode ser um ou mais arquivos/pastas
 		Parâmetros (opcional)
 			-u - adiciona todos os arquivos que têm modificações e que já estavam no repositório antes de começar as modificações
+		
 		Como selecionar vários arquivos?
 			Coringas/Wildcards - Servem para criar um padrão de nome p/ os arquivos e adicionar eles todos de uma vez:
 				'git add .' -> este wildcard é o mais comum, adiciona tudo, seja qlqr arquivo e/ou qlqr pasta e o que houver dentro da pasta também
