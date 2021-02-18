@@ -1,0 +1,87 @@
+REMOTO I
+
+	origin
+		Nome usual que utilizamos para nos referirmos ao servidor remoto.
+		Substitui a URL do repositório nos comandos.
+		Criado automaticamente ao utilizarmos o 'git clone'.
+		
+		
+	
+	
+	CLONANDO UM REPOSITÓRIO REMOTO
+	
+	git clone -> inicia um repositório de git a partir de um repositório remoto
+		Parâmetros (obrigatórios)
+			<URL>
+	EXPLICAÇÃO: Em um repositório remoto já existente (como no github), usamos o 'git clone + <URL>', sendo a URL o endereço 'http...' do repositório que queremos clonar no nosso PC. Ao fazermos isso, automaticamente os arquivos existentes neste repositório são copiados para o nosso PC, criando um repositório local de mesmo nome do repositório remoto. Se já existir um repositório local de mesmo nome que o repositório remoto que estamos tentando clonar no PC, o git não permitirá que o repositório seja clonado, informando que já há um repositório local de mesmo nome que o repositório remoto.
+	
+	
+	
+	
+	ENVIANDO UM REPOSITÓRIO LOCAL PARA UM LOCAL REMOTO
+	Neste caso, o repositório já foi criado com 'git init' e agora vamos enviar para um local remoto.
+	
+	git remote add/git remote set-url -> Adiciona/altera um repositório remoto ao repositório atual
+		Parâmetros (obrigatórios) -> OBRIGATÓRIO estar em ordem (1º nome - 2º URL)
+			<nome-do-repositório-remoto> -> pode ser qualquer nome, mas geralmente é 'origin'
+			<URL>
+		Parâmetros (opcionais)
+			-v -> usado para saber em qual(is) repositório(s) remoto(s) estamos conectados
+	EXPLICAÇÃO: O 'git remote add' adiciona ao local remoto um repositório que não existe, e o 'git remote set-url' altera um repositório que existe.
+	
+	
+	
+	
+	git fetch -> recupera TODO E SOMENTE o histórico de alterações do repositório remoto
+		Parâmetros (opcionais)
+			<nome-do-repositório-remoto> -> recupera de um repositório específico 
+	EXPLICAÇÃO: Ou seja, ele vai verificar os commits feitos no servidor remoto; ele NÃO irá alterar sua pasta atual. Sem parâmetro algum, o 'git fetch' irá puxar todos os repositórios remotos. 
+	
+	
+	
+	
+	
+	git pull -> sincroniza as alterações do repositório remoto no repositório local
+		Parâmetros (opcionais)
+			<nome-do-repositório-remoto> -> sincroniza de um repositório específico (geralmente é 'origin')
+	EXPLICAÇÃO: Este comando efetivamente puxa as informações do repositório remoto para o repositório local e altera os arquivos do repositório local.
+	
+	
+	
+	
+	git push -> envia as alterações do repositório local ao repositório remoto
+		Parâmetros (obrigatórios)
+			<nome-do-repositório-remoto> -> geralmente é 'origin'
+			<branch> -> VER EXPLICAÇÃO a partir dos 14:38 até 15:25
+		Parâmetros (opcionais)
+			-u/--set-upstream -> VER EXPLICAÇÃO a partir dos 15:25 até 16:48
+	EXPLICAÇÃO: Este comando efetivamente envia as informações do repositório local para o repositório remoto e altera os arquivos do repositório remoto.
+	
+	
+	
+	
+	COMPARANDO ARQUIVOS
+	Para isso, precisamos de uma ferramenta gráfica de comparação para comparar os arquivos atuais com os alterados. As outras formas vistas foram para verificar pequenos detalhes. Uma ferramenta indicada foi o 'meld'.
+	
+	git config --global diff.tool <ferramenta>
+	
+	NOTA: Pesquisar meld e saber como utilizar.
+	
+	
+	
+	
+	COMPARANDO VERSÕES
+	
+	git difftool -> ao invés de comparar na linha de comando abrirá na ferramenta gráfica
+		
+	git diff -> compara os arquivos da pasta atual. O que vai ser comparado depende dos parâmetros inseridos. 
+		Especificando caminhos
+			-- <caminho(s)> -> VER EXPLICAÇÃO a partir de 24:10 até 25:10
+	
+	git diff HEAD -> compara os arquivos da pasta atual com o último commit-no caso o repositório (podemos usar o nome commit também)
+	
+	git diff --staged HEAD -> compara os arquivos da staging area com o último commit-no caso o repositório (podemos usar o nome commit também)
+			
+	EXPLICAÇÃO: Por padrão, ele compara os arquivos da pasta local com a staging area.
+	
+	
