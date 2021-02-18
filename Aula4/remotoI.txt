@@ -71,17 +71,40 @@ REMOTO I
 	
 	
 	COMPARANDO VERSÕES
-	
-	git difftool -> ao invés de comparar na linha de comando abrirá na ferramenta gráfica
+	EXPLICAÇÃO: Por padrão, 'git diff' compara os arquivos da pasta local com a staging area.
 		
 	git diff -> compara os arquivos da pasta atual. O que vai ser comparado depende dos parâmetros inseridos. 
 		Especificando caminhos
 			-- <caminho(s)> -> VER EXPLICAÇÃO a partir de 24:10 até 25:10
 	
-	git diff HEAD -> compara os arquivos da pasta atual com o último commit-no caso o repositório (podemos usar o nome commit também)
+	git diff HEAD -> compara os arquivos da pasta atual com o último commit - no caso o repositório (podemos usar o nome commit também)
 	
-	git diff --staged HEAD -> compara os arquivos da staging area com o último commit-no caso o repositório (podemos usar o nome commit também)
+	git diff --staged HEAD -> compara os arquivos da staging area com o último commit - no caso o repositório
 			
-	EXPLICAÇÃO: Por padrão, ele compara os arquivos da pasta local com a staging area.
+	git difftool -> ao invés de comparar na linha de comando abrirá na ferramenta gráfica
 	
+	git diff <commit1> <commit2> -> com o nome do commit1 e do commit2 é possível compará-los
+		RECOMENDAÇÃO -> sempre colocar o nome do commit mais recente no commit1, do contrário, ocorrerá uma comparação reversa; ao invés de ver tudo que foi add, ele vai entender que tudo que foi add foi removido. Usar 'git log --oneline' para ter uma lista reduzida dos commits e com isso, saber os seus nomes, e por sequência, compará-los.
 	
+	UTILIZANDO REFERÊNCIAS: 
+		^ -> este símbolo significa um commit anterior a um commit específico. Por exemplo: 
+			git diff HEAD^  -> vai comparar o HEAD com um commit anterior  
+			git diff HEAD^^ -> vai comparar o HEAD com dois commits anteriores
+			git diff HEAD^^^ ... e assim vai...
+		
+		~N -> ao invés de ficar add ^, é mais fácil colocar ~N, onde N é a quantidade de commits anteriores
+		Por exemplo:
+			git diff HEAD~3 é a mesma coisa que git diff HEAD^^^
+	
+	COMPARANDO COM O REPOSITÓRIO REMOTO:
+		O git não faz essa comparação, entretanto podemos fazer o seguinte:
+			1º - git fetch -> para todas a atualizações do repositório remoto ficarem no repositório local.
+			2º - agora podemos comparar as alterações ocorridas no repositório remoto com os arquivos que já temos:
+				git diff origin/main
+			
+		FAZER:
+			'git pull' e depois 'git diff main' 
+		é a mesma coisa que fazer:
+			'git fetch' e depois 'git diff origin/main'
+			
+		
