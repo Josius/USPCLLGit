@@ -1,0 +1,3 @@
+devconnected.com/how-to-set-upstream-branch-on-git/ - O que são branches, upstream e como utilizá-las
+metring.com.br/para-que-serve-o-git-fetch-vs-pull - git fetch vs git pull
+git-tower.com/learn/git/ebook/en/command-line/advanced-topics/diffs - git diff
