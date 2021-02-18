@@ -120,3 +120,4 @@ Semelhante ao git reset, se já houver acontecido o commit, git restore não det
 	IGNORANDO ARQUIVOS
 	.gitignore -> arquivo de texto que contém uma lista de nomes que serão ignorados pelo git. Geralmente (mas não necessariamente) localizado na raiz do projeto; também podemos colocar um por pasta, o qual ignorará os arquivos de cada pasta ao qual ele se encontra. Podemos usar coringas para definir os nomes.
 	Podemos também adicionar um padrão de arquivos no gitignore, como por exemplo, temos 5 arquivos como arq1, arq2, ..., arq5, e colocamos no gitignore arq*; ele iginorará todos que tenham 'arq'
+	NOTA: precisa ser um nome de arquivo por linha para que o .gitignore funcione
