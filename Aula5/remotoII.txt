@@ -1,0 +1,73 @@
+REMOTO II
+								  (HEAD)		
+	(1)---->(2)---->(3)---->(4)---->(5)---> ... --->(...)	(main)			- local
+	
+	(1)---->(2)---->(3)---->(4)---->(5)---> ... --->(...)	(origin/main)	- remoto
+	
+	O histórico padrão de commits do git é linear. Quando fazemos um 'git push' esse histórico é passado ao servidor remoto e é dessa forma que o git sabe quando nosso repositório local está alguns commits a frente ou atrás do repositório remoto.
+	É possível criar ramificações (ou branches) nesse histórico, criando um ambiente que diverge da linha do tempo principal.
+	
+	(1)---->(2)---->(3)---->(4)---->(5)---> ... --->(...)	(main)
+							  |
+							  |
+							  |
+							  |	  (HEAD)
+							   ---->(6)		(Nova Funcionalidade)
+
+	
+	
+	
+	branch
+	- Cria uma cópia do histórico de mudanças a partir de um ponto (commit) específico.
+	- Todas as modificações feitas dentro de uma branch são isoladas da linha do tempo principal.
+	- A decisão de criar ou não uma branch é específica por situação. Cada pessoa/equipe costuma trabalhar de certa forma, seguindo diretrizes imposta ou pela pessoa ou pela empresa da equipe.
+	- Assim que criamos uma branch, o nosso HEAD se movimenta.
+	
+	
+	
+	
+	git branch -> lista, cria e deleta branches de acordo com parâmetros passados no comando. Seu comportamento padrão é listar todas as branches locais criadas.
+		Parâmetros (opcionais)
+			-l -> lista as branches (ao ser combinado com outros comandos, altera várias branches)
+				Alternativa: --list
+			
+			-r -> somente remoto
+			-a -> todas, inclusive remoto
+
+
+EXEMPLOS:
+................................................................................
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch
+* main
+
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch -l
+* main
+
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch --list
+* main
+
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch -lr
+  origin/HEAD -> origin/main
+  origin/main
+
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch -la
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch -a
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch -r
+  origin/HEAD -> origin/main
+  origin/main
+................................................................................
