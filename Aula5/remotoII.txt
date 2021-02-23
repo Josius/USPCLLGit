@@ -84,7 +84,13 @@ CRIANDO UMA BRANCH
 			
 EXEMPLOS:
 ................................................................................
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch nova-funcionalidade
 
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch
+* main
+  nova-funcionalidade
 ................................................................................
 
 
@@ -126,3 +132,17 @@ NAVEGANDO NO HISTÓRICO DA BRANCH
 			<commit-id> (CUIDADO). NÃO ENTENDI MUITO BEM, VERIFICAR DEPOIS DE OUTRA FONTE.
 		Parâmetros (opcionais)	
 			-b ->cria uma branch e realiza o checkout. NÃO FUCIONA com o nome de uma branch já criada.
+			
+
+EXEMPLOS:
+................................................................................
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git checkout nova-funcionalidade
+Switched to branch 'nova-funcionalidade'
+
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (nova-funcionalidade)
+$ git status
+On branch nova-funcionalidade
+nothing to commit, working tree clean
+................................................................................
+
