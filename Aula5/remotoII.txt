@@ -169,3 +169,25 @@ On branch nova-funcionalidade
 nothing to commit, working tree clean
 ................................................................................
 
+
+
+
+MERGEANDO 
+	Cria um novo commit que adiciona todas as mudanças de uma nova branch a branch antiga.
+	Situação ideal: fast-foward -> acontece quando estamos trabalhando em outra branch (não a main) e ninguém faz alteração alguma no branch main, logo não ocorrerá conflitos.
+	
+	(3)---->(4)---->(5)---->(8)---> ... --->(...)
+			  |				 |
+			  |				 |
+			  |				 |
+			  |				 |	  
+			   ---->(6)---->(7)
+
+
+
+
+	git merge <nome-da-branch> -> tenta realizar um merge commit da branch espeficada para a branch atual. MUITO CUIDADO - PRESTAR ATENÇÃO EM QUAL BRANCH ATUAL ESTAMOS. 
+		Parâmetros (obrigatórios)
+			<nome-da-branch>
+		Parâmetros (opcionais)
+			--no-ff -> sem fastfoward -> não entendi, verificar depois, mas parece que é se não detectar alteração entre o branch main e outro branch, ele faz o commit indicando que é um commit de merge
