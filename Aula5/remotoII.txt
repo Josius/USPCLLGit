@@ -91,6 +91,15 @@ Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
 $ git branch
 * main
   nova-funcionalidade
+
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch nova-branch
+
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch
+* main
+  nova-branch
+  nova-funcionalidade
 ................................................................................
 
 
@@ -102,7 +111,14 @@ RENOMEANDO UMA BRANCH
 			
 EXEMPLOS:
 ................................................................................
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch -m nova-branch nova-branch-com-outro-nome
 
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch
+* main
+  nova-branch-com-outro-nome
+  nova-funcionalidade
 ................................................................................
 
 
@@ -118,7 +134,14 @@ DELETANDO UMA BRANCH
 			
 EXEMPLOS:
 ................................................................................
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch -d nova-branch-com-outro-nome
+Deleted branch nova-branch-com-outro-nome (was 41f6950).
 
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git branch -l
+* main
+  nova-funcionalidade
 ................................................................................
 
 
