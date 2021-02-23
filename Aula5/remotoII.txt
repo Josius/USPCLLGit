@@ -26,6 +26,7 @@ REMOTO II
 	
 	
 	
+LISTANDO BRANCHES	
 	git branch -> lista, cria e deleta branches de acordo com parâmetros passados no comando. Seu comportamento padrão é listar todas as branches locais criadas.
 		Parâmetros (opcionais)
 			-l -> lista as branches (ao ser combinado com outros comandos, altera várias branches)
@@ -71,3 +72,57 @@ $ git branch -r
   origin/HEAD -> origin/main
   origin/main
 ................................................................................
+	
+	
+	
+
+CRIANDO UMA BRANCH	
+	git branch <nome-da-branch> -> cria uma branch com nome especificado
+		Parâmetros (opcionais)
+			<commit-id>
+			
+			
+EXEMPLOS:
+................................................................................
+
+................................................................................
+
+
+
+
+RENOMEANDO UMA BRANCH
+	git branch -m <branch-antiga> <novo-nome> -> renomeia uma branch. Muito cuidado ao renomear branches que já estão presentes no repositório remoto
+				
+			
+EXEMPLOS:
+................................................................................
+
+................................................................................
+
+
+
+
+DELETANDO UMA BRANCH
+	git branch -d <nome-da-branch> -> deleta uma branch com o nome especificado. A branch precisa estar no histórico da branch original
+		Parâmetros (opcionais)
+			-f -> força a remoção (CUIDADO). Por padrão, o 'git branch -d' não deixa deletar  uma branch criada que não esteja no histórico original. Ou seja, se não foi feito o merge dessa branch, o git não permitirá remover. Para deletar é necessário forçar a remoção.
+			
+	BOAS PRÁTICAS: as branches normalmente são temporárias; então, quando tiver terminado de modificar tudo que precisava e enviado essas alterações para a branch original, é uma boa prática apagar a branch, pricipalmente se ela for local de muito curta. 
+				
+			
+EXEMPLOS:
+................................................................................
+
+................................................................................
+
+
+
+
+NAVEGANDO NO HISTÓRICO DA BRANCH
+	git checkout <nome-da-branch> -> muda a posição do HEAD. Ou seja, troca pra outra branch.
+		Parâmetros (obrigatórios)
+			<nome-da-branch> 
+			ou
+			<commit-id> (CUIDADO). NÃO ENTENDI MUITO BEM, VERIFICAR DEPOIS DE OUTRA FONTE.
+		Parâmetros (opcionais)	
+			-b ->cria uma branch e realiza o checkout. NÃO FUCIONA com o nome de uma branch já criada.
