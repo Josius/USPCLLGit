@@ -167,6 +167,16 @@ Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (nova-funcionalidade)
 $ git status
 On branch nova-funcionalidade
 nothing to commit, working tree clean
+
+................................................................................
+EXEMPLOS USANDO O '-b'
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+$ git checkout -b branch-conflito
+Switched to a new branch 'branch-conflito'
+
+Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (branch-conflito)
+$ git status
+On branch branch-conflito
 ................................................................................
 
 
