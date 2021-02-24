@@ -1,0 +1,3 @@
+Texto original feito no branch main
+
+Modificação feita na branch-conflito
