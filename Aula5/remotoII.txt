@@ -220,3 +220,40 @@ Auto-merging Aula5/testMerge.txt
 CONFLICT (content): Merge conflict in Aula5/testMerge.txt
 Automatic merge failed; fix conflicts and then commit the result.
 ...............................................................................	
+
+PRECISA VERIFICAR E CORRIGIR CONFIGURAÇÃO DO MELD
+
+
+
+
+REESCREVENDO O HISTÓRICO
+	Realoca um conjunto de commits em outro ponto
+	Mantém um histórico mais linear e mais legível
+	Geralmente utilizado para integrar mudanças do Remoto para o Local
+
+			  (6)****>(7)	(6)---->(7)---> ... --->(...)
+			  *				 |
+			  *				 |
+			  *				 |
+			  *				 |	  
+	(3)---->(4)---->(5)---->(8)
+
+
+NUNCA FAZER REBASING EM BRANCHES PÚBLICOS - pois pode impactar o restante das pessoas envolvidas
+	
+	
+	
+	
+	git rebase <branch-destino> -> realoca os commits da branch atual para a branch-destino
+		Parâmetros (obrigatórios)
+			<nome-da-branch>
+		Parâmetros (opcionais) 
+			-i ou --interactive -> permite escolher quais commits do histórico vc quer passar de uma branch para outra. VERIFICAR COMO FUNCIONA.
+	
+OUTRA FORMA DE USAR O REBASING
+	git rebase <branch-destino> <branch-origem> -> realoca os commits da branch-origem para a branch-origem
+		Parâmetros (opcionais) 
+			-i ou --interactive -> permite escolher quais commits do histórico vc quer passar de uma branch para outra. VERIFICAR COMO FUNCIONA.
+	
+	
+EXPLICAÇÃO: Diferente do merge, ele faz o contrário. Ao invés de estarmos na branch main e 'mergear' o histórico de outra branch ($ git merge branch-conflito); nos precisamos estar na branch que contém o histórico que queremos e enviá-lo para a branch que queremos que receba o histórico.
