@@ -191,3 +191,13 @@ MERGEANDO
 			<nome-da-branch>
 		Parâmetros (opcionais)
 			--no-ff -> sem fastfoward -> não entendi, verificar depois, mas parece que é se não detectar alteração entre o branch main e outro branch, ele faz o commit indicando que é um commit de merge
+
+
+
+
+RESOLVENDO CONFLITOS 
+	Se acaso houver duas pessoas alterando o texto original, isso resultará em conflito. Para resolvê-lo é necessário corrigir manualmente. O git NÃO CORRIGIRÁ ESSES CONFLITOS.
+	Para usar uma ferramenta gráfica para resolver os conflitos, é preciso instalar e configurar ela. No windows estou usando o Meld, logo:
+	
+	Meger Tool
+		git config merge.tool Meld
