@@ -1,0 +1,4 @@
+atlassian.com/agile/software-development/branchin - algumas situações em que é desejável criar branches
+atlassian.com/git/tutorials/merging-vs-rebasing - merge vs rebase
+stackoverflow.com/questions/34119866
+https://stackoverflow.com/questions/34119866/setting-up-and-using-meld-as-your-git-difftool-and-mergetool - configurando uma ferramenta de comparação de texto no Git (diff e merge)

@@ -257,3 +257,6 @@ OUTRA FORMA DE USAR O REBASING
 	
 	
 EXPLICAÇÃO: Diferente do merge, ele faz o contrário. Ao invés de estarmos na branch main e 'mergear' o histórico de outra branch ($ git merge branch-conflito); nos precisamos estar na branch que contém o histórico que queremos e enviá-lo para a branch que queremos que receba o histórico.
+
+NOTA: VERIFICAR os últimos minutos (48:00), pq as informações passadas não são as mesmas a serem executadas.
+
