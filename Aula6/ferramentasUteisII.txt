@@ -1,0 +1,54 @@
+FERRAMENTAS UTEIS II - começa aos 08:25 min do vídeo
+
+	A aula de hoje cobre mais algumas ferramentas de apoio que podemos utilizar enquanto estamos trabalhando em um repositório com git.
+	
+STASHING: Guardando para mais tarde
+	Utilizado quando queremos salvar um conjunto de mudanças, mas não queremos fazer um commit para isso.
+	As mudanças no stash são armazenadas em uma pilha.
+	
+	git stash -> retorna o HEAD ao estado do último commit, armazenando as mudanças em uma pilha. 
+		Parâmetros (opcionais)
+			-u 			 -> inclui não indexados, ou seja, os arquivos novos
+			-m "<texto>" -> adiciona uma mensagem ao item dos stash
+
+EXPLICAÇÃO: comportamenteo padrão -> adiciona todos os arquivos indexados ao stash. E o que são esses arquivos? São arquivos que já adicionamos em algum momento ao repositório. Então, se criamos um novo arquivo, ele ainda não está indexado.
+Se usarmos o '-u' incluímos os arquivos não indexados.
+Sem o '-m', cria uma mensagem padrão com o id e a mensagem do último commit.
+O 'git stash' sem parâmetro retorna para o estado original, o que havia antes de fazer qualquer alteração. 
+
+	git stash push -> possibilita especificar caminhos a serem adicionados ao stash
+		Parâmetros (opcionais)
+			os mesmos do git stash
+			-- <pasta(s)/arquivo(s)>
+	
+		
+	git stash pop -> aplica as mudanças de um item do stash nos arquivos atuais. Retira item da pilha.
+	git stash apply -> aplica as mudanças de um item do stash nos arquivos atuais. Não retira item da pilha.
+	PODE GERAR CONFLITOS
+		Parâmetros (opcionais)
+			<#stash> -> Nº do stash. Conforme vamos empilhando os itens, o stash cria um índice ao qual cada elemento da pilha recebe um nº, começando no 0, 1, 2, ...
+			Assim, se quisermos retirar um item que não seja o último, precisamos especificar o nº do item que queremos retirar
+
+EXPLICAÇÃO: comportamenteo padrão -> sem parâmetro nenhum, ele aplica as mudanças do último item. Pode gerar conflitos como o merge/rebase. Quando detecta conflitos no 'git stash pop' ele automaticamente segue o padrão do 'git stash apply' (joga as mudanças e não retira o último item)
+	
+	
+	git stash list -> lista os itens no stash
+	
+	git stash show -> detalha as mudanças de um item específico no stash
+		Parâmetros (opcionais)
+			<# stash>	-> específica qual item queremos visualizar.
+			-p			-> detalha no modo patch. Detalha o que foi alterado e cada linha alterada.
+			
+EXPLICAÇÃO: comportamenteo padrão -> sem parâmetro nenhum, detalha o último item.
+
+	
+	git stash drop -> remove um item do stash, sem aplicá-lo. Suponha que foi feita uma alteração, depois colocamos ela no stash e por fim não queremos mais essa alteração.
+		Parâmetros (opcionais)
+			<# stash>	-> específica qual item queremos remover.
+	
+EXPLICAÇÃO: comportamenteo padrão -> sem parâmetro nenhum, remove o último item. Se der algum conflito no 'git stash pop', após resolvermos os conflitos, usamos o comando 'git stash drop' no último item.
+
+
+	git stash clear -> remove todos os itens do stash sem aplicar as mudanças.
+	
+RECOMENDAÇÃO: apagar os itens do stash quando não precisarmos usar mais, pois elas ficam na pasta oculta .git
