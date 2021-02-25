@@ -6,3 +6,5 @@ outra modificação feita na branch main
 Modificação feita na branch-conflito
 
 vou fazer um rebase
+
+conflito

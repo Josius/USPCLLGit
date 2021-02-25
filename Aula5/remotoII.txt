@@ -260,3 +260,15 @@ EXPLICAÇÃO: Diferente do merge, ele faz o contrário. Ao invés de estarmos na
 
 NOTA: VERIFICAR os últimos minutos (48:00), pq as informações passadas não são as mesmas a serem executadas.
 
+RESOLVENDO CONFLITOS - CONTINUAÇÃO NA AULA 6 AOS 02:00 minutos
+	Assim como o merge, ele vai tentar dar um auto-rebase, porém como há um conflito, o rebase é interrompido. 
+	Muito cuidado!
+	
+	CANCELANDO O REBASE
+		git rebase --abort -> cancela todos os estados de conflito, então podemos verificar o que ocorreu e decidimos se queremos dar um rebase ou não
+	
+	APOS RESOLVER OS CONFLITOS
+		git rebase --continue -> se após resolvermos os conflitos quisermos ainda fazer o rebase, é só usar o comando da linha acima.
+		
+		
+	
