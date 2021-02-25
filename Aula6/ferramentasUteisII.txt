@@ -52,3 +52,5 @@ EXPLICAÇÃO: comportamenteo padrão -> sem parâmetro nenhum, remove o último 
 	git stash clear -> remove todos os itens do stash sem aplicar as mudanças.
 	
 RECOMENDAÇÃO: apagar os itens do stash quando não precisarmos usar mais, pois elas ficam na pasta oculta .git
+
+NOTA: Com stash podemos mover as mudanças de uma branch para outra. Por exemplo, fizemos um git stash, vimos que estamos na branch errada, então devemos ir para a branch certa e por fim, nesta branch, usamos o comando 'git stash pop'
