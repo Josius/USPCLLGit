@@ -54,3 +54,46 @@ EXPLICAÇÃO: comportamenteo padrão -> sem parâmetro nenhum, remove o último 
 RECOMENDAÇÃO: apagar os itens do stash quando não precisarmos usar mais, pois elas ficam na pasta oculta .git
 
 NOTA: Com stash podemos mover as mudanças de uma branch para outra. Por exemplo, fizemos um git stash, vimos que estamos na branch errada, então devemos ir para a branch certa e por fim, nesta branch, usamos o comando 'git stash pop'
+
+
+
+
+TAGGING: Adicionando marcações no históricos. 
+IMPORTANTE: não podemos criar duas tags com mesmo nome.
+	Utilizado quando queremos fazer marcações em pontos importantes no históricos.
+	Substitui os parâmetros que pedem por um commit específico.
+	Caso de uso comum: Numeração de versões.
+
+			|v1|					|v2|
+	(1)----->(2)---->(3)---->(4)---->(5)
+
+	Se um commit tem uma tag associada, podemos usar a tag ao invés do id do commit. Verificar se tudo que podemos fazer com um id também pode ser feito com a tag.
+	
+	TAGS ANOTADAS -> possibilita adicionar mais informações as tags. Cria um mini arquivo de texto, ao qual podemos anotar do que se trata aquele commit.
+	
+	git tag <nome-da-tag> -> cria uma tag com o nome espedifícado.
+		Parâmetros (obrigatórios)
+			<nome-da-tag> -> cria uma tag no commit atual
+		Parâmetros (opcionais)
+			-a -> tag anotada
+			-m -> texto. Envia o texto diretamente, como nos commits
+			<commit-ID> -> ao invés de fazer uma tag no commit atual (HEAD), ele cria uma tag no commit especificado pelo id
+			
+NOTA: Se passarmos o comando só com '-a', ele vai entender que queremos uma tag anotada mas que não passamos a mensagem ainda, e por consequência, o editor de texto vim será aberto e teremos que fazer a mensagem por ele, salvar e depois disso a tag será criada. Se o texto estiver vazio, ele não cria a tag. 
+
+NOTA: O '-a' é para criar um texto mais longo, diferente do '-m' que é para uma mensagem curta.
+
+	git tag -l -> lista as tags do repositório
+		Parâmetros (opcionais)
+			<padrão-de-nome> -> se tivermos várias tags semelhantes (como v1, v2, v3, v3.1.0, e assim por diante), com o uso do padrão de nome mais um coringa (git tag -l v*) listaremos todas as tags semelhantes
+			
+	git tag -d <nome-da-tag1> <nome-da-tag2> ... -> deleta as tags do repositório. Pode deletar uma ou várias.
+		Parâmetros (obrigatórios)
+			tags a serem removidas
+	
+	git tag <nome-da-tag> -f <commit-ID> -> move uma tag para outro commit
+		Parâmetros (obrigatórios)
+			<nome-da-tag>
+			<commit-ID>
+
+NOTA: '-f' é para forçar algo.
