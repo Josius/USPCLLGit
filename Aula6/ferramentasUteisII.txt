@@ -113,3 +113,21 @@ TAGS NO REMOTO
 	git push --delete <nome-do-remoto> <tag> -> remove a tag especificada no servidor remoto
 	CUIDADO ao remover tags com o mesmo nome que branches! Pois pode ocorrer de haver uma tag e uma branch com mesmo nome e aí ele deletará a branch ao invés da tag.
 	
+ESPECIFICANDO QUE ESTAMOS REMOVENDO UMA TAG E NÃO UMA BRANCH	
+	NOTA: podemos também passar 'git push --delete <nome-do-remoto> refs/' que resultará em 'refs/heads/main	refs/tags/<tag>
+	'refs' -> é uma pasta da configuração do git que armazena todos os HEADS de todas as branches, e também tem referências para as tags, e assim vc específica que está removendo uma tag e não uma branch
+	NOTA2: usei o comando 'git push --delete <nome-do-remoto> refs/' e ele resultou:
+	
+		Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+		$ git push --delete origin refs/
+		fatal: invalid refspec ':refs/'
+	
+	entretanto, usei o 'git push --delete origin refs/tags/v1' e ele resultou:
+		
+		Daiwa@Daiwa-PC MINGW64 ~/Documents/Git/USPCLLGit (main)
+		$ git push --delete origin refs/tags/v1
+		To github.com:Josius/USPCLLGit.git
+		- [deleted]         v1
+	
+	e este sim apagou a tag no repositório online
+	
