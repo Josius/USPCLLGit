@@ -98,4 +98,18 @@ NOTA: O '-a' é para criar um texto mais longo, diferente do '-m' que é para um
 
 NOTA: -f (force) -> é para forçar algo.
 	
+TAGS NO REMOTO
+	O comportamento padrão do git push é enviar somente os commits ao remoto.
+	Caso desejarmos adicionar as tags, também é necessário especificar ao comando para fazê-lo.
+	
+	COMPLEMENTANDO O GIT PUSH
+	git push <nome-do-remoto> <tag> -> envia uma tag do repositório local ao repositório remoto
+		Parâmetros (obrigatórios)
+			<nome-do-remoto>
+			<tag>
+	
+	git push <nome-do-remoto> branch --tags -> envia todas as tags presentes na branch especificada para o servidor remoto
+	
+	git push --delete <nome-do-remoto> <tag> -> remove a tag especificada no servidor remoto
+	CUIDADO ao remover tags com o mesmo nome que branches! Pois pode ocorrer de haver uma tag e uma branch com mesmo nome e aí ele deletará a branch ao invés da tag.
 	
