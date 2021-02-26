@@ -1,0 +1,2 @@
+git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning - capítulo do livro oficial do Git que fala sobre stashing
+atlassian.com.br/git/tutorials/inspecting-a-repository/git-tag - tagging em pt-BR
