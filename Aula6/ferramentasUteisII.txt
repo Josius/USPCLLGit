@@ -96,4 +96,6 @@ NOTA: O '-a' é para criar um texto mais longo, diferente do '-m' que é para um
 			<nome-da-tag>
 			<commit-ID>
 
-NOTA: '-f' é para forçar algo.
+NOTA: -f (force) -> é para forçar algo.
+	
+	
